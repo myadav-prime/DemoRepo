@@ -15,6 +15,7 @@ namespace IceDemo
         protected void Application_Start()
         {
 			//Bala Comments
+			//Comments -1
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
