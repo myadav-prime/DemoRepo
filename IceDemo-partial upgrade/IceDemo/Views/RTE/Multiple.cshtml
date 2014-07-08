@@ -1,0 +1,63 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Multiple</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript">
+            var editor;
+            var diveditor;
+            var divcontent;
+            function RichTextEditor_OnLoad(rteeditor) {
+                editor = rteeditor;
+                diveditor = document.getElementById("div_editor");
+            }
+
+            function GetEditorHTML() {
+                if (!editor || !divcontent)
+                    return;
+                diveditor.style.display = "none";
+                var html = editor.GetText();
+                divcontent.innerHTML = html;
+            }
+
+            function EditMe(_div) {
+                divcontent = _div;
+                editor.SetText(_div.innerHTML);
+                var t = _div.offsetTop;
+                var l = _div.offsetLeft;
+                diveditor.style.display = "";
+                diveditor.style.zIndex = "9";
+                diveditor.style.left = l + "px";
+                diveditor.style.top = t + "px";
+            }
+    </script>
+</head>
+<body>
+    <div>
+        <p>
+            <div>Header:</div>
+            <div id="dvHeader" onclick="EditMe(this)" style="min-height: 30px;width: 600px; border: solid 1px gray; padding: 5px;" ></div>
+            <small><i>Click above to edit header</i></small>
+        </p>
+        <p>
+            <div>Template:</div>
+            <div id="dvTemplate" onclick="EditMe(this)" style="min-height: 30px;width: 600px; border: solid 1px gray; padding: 5px;"></div>
+            <small><i>Click above to edit template</i></small>
+        </p>
+
+        <div id="div_editor" style="display: none; position: absolute; background: white;
+                                                                                                                                                             left: 0px; top: 0px; border: 1px solid gray;">
+            @Html.Raw(ViewBag.Editor2)
+            <button type="button" onclick="GetEditorHTML();">
+                OK</button>
+        </div>
+        
+    </div>
+</body>
+</html>

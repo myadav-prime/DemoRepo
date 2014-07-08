@@ -1,0 +1,19 @@
+<p>
+                </p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p><span>&nbsp;</span></p><p><a></a><span>Statement of Work</span></p><p><span>Date:</span><span>
+August 20, 2013</span></p><p><span>Pursuant to the terms and conditions set <span class="del cts-1" data-cid="15" data-userid="1" data-username="Admin SupraMed" data-time="1398257585841" title="Deleted by Admin SupraMed - 04/23/2014 6:23pm">forth </span><span class="ins cts-1" data-cid="16" data-userid="1" data-username="Admin SupraMed" data-time="1398257585847" title="Inserted by Admin SupraMed - 04/23/2014 6:23pm">behind&nbsp;</span>in the Master
+Services Agreement between Prime Technology Group, Inc. (Prime) and SupraMed,
+Inc., Prime intends to provide the following services to Company:</span></p><p><span>&nbsp;</span></p><p><span>Description
+of Requested Services</span></p><p><span>Prime will build an Electronic Medical Record (EMR) system
+specific to the practice of plastic surgery.&nbsp;
+The EMR will be known as SupraMed.&nbsp;
+</span></p><p><span>&nbsp;</span></p><p><span>SupraMed will contain a medical record for each patient, the
+specifics of which will be detailed later in this document.&nbsp; The EMR will be architected so that later
+versions (outside the scope of this SOW) will be able to capture not only text
+based notes, but also interactive pictures that allow the doctor to annotate
+areas on the image which are to be the focus of procedures. The EMR will also
+be architected so that a mobile version of the application can be added
+to the application suite, although the actual mobile application is outside the
+scope of this statement of work.&nbsp; </span></p><p><span>&nbsp;</span></p><p><span>The application will be cloud based and will be
+sold on a subscription basis to other plastic surgery practices.&nbsp; The specific platform for hosting the
+solution will be determined during Sprint&nbsp;</span></p><p><span style="color:rgb(224,102,102);"></span>
+            </p>

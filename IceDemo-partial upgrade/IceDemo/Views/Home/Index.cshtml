@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ice Demo</title>
+   
+</head>
+<body>
+    <div>
+       <ul>
+           <li>@Html.ActionLink("Stand Alone","StandAlone")</li>
+           <li>@Html.ActionLink("With JQuery TE editor","WithTE")</li>
+           <li>@Html.ActionLink("With TinyMCE editor","WithTinyMCE")</li>
+           <li>@Html.ActionLink("Provided Demo","ProvidedDemo")</li>
+           <li>@Html.ActionLink("With MVC RTE editor", "WithRTE", new { tracked=false})</li>
+           
+       </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Contents/ice.css" type="text/css" media="screen" />
+    <link href="~/Contents/jquery-te-1.4.0.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery-te-1.4.0.min.js"></script>
+    @if (false)
+    {
+        <script src="~/Scripts/ice-master.min.js"></script>
+    }
+    else
+    {
+        <script src="~/Scripts/ice.js"></script>
+        <script src="~/Scripts/dom.js"></script>
+        <script src="~/Scripts/bookmark.js"></script>
+        <script src="~/Scripts/polyfills.js"></script>
+        <script src="~/Scripts/icePlugin.js"></script>
+        <script src="~/Scripts/icePluginManager.js"></script>
+        <script src="~/Scripts/plugins/IceAddTitlePlugin/IceAddTitlePlugin.js"></script>
+        <script src="~/Scripts/plugins/IceCopyPastePlugin/IceCopyPastePlugin.js"></script>
+        <script src="~/Scripts/plugins/IceEmdashPlugin/IceEmdashPlugin.js"></script>
+        @*<script src="~/Scripts/plugins/icesearchreplace/editor_plugin.js"></script>*@
+        <script src="~/Scripts/plugins/IceSmartQuotesPlugin/IceSmartQuotesPlugin.js"></script>
+        <script src="~/Scripts/rangy-core.js"></script>
+        <script src="~/Scripts/selection.js"></script>
+    }
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $("#editor").jqte();
+            text = $('.jqte_editor')[0];
+            window.tracker = new ice.InlineChangeEditor({
+                element: text,
+                handleEvents: true,
+                currentUser: { id: 1, name: 'Admin SupraMed' },
+                plugins: ['IceAddTitlePlugin', 'IceSmartQuotesPlugin', 'IceEmdashPlugin', {
+                    name: 'IceCopyPastePlugin',
+                    settings: {
+                        pasteType: 'formattedClean',
+                        preserve: 'p,a[href],i,em,b,span,ul,ol,li,hr'
+                    }
+                }
+                ]
+            }).startTracking();
+            $('#drpChange').change(function (a, b) {
+                var sel = $(this).find(':selected');
+                console.log(sel.data('id'))
+                console.log(sel.text())
+                tracker.setCurrentUser({ id: sel.data('id'), name: sel.text() });
+            });
+            $('#btnShowHide').click(function (e) {
+                var body = $('.jqte_editor');
+                if ($(body).hasClass('CT-hide')) {
+                    $(body).removeClass('CT-hide');
+                    updateCTS(false);
+                } else {
+                    $(body).addClass('CT-hide');
+                    updateCTS(true);
+                }
+            });
+
+            function updateCTS(hide) {
+                var a = hide ? '-hide' : '';
+                var r = hide ? '' : '-hide';
+                for (var i = 1; i < 8; i++) {
+                    $('.cts-' + i + r).addClass('cts-' + i + a).removeClass('cts-' + i + r)
+                }
+            }
+
+            $('#btnAccept').click(function (e) {
+                tracker.acceptAll();
+            });
+            $('#btnReject').click(function (e) {
+                tracker.rejectAll();
+            });
+            $("#chkOnOff").click(function (e) {
+                tracker.isTracking = $(this).is(':checked');
+            });
+            $('#btnSave').click(function (e) {
+                var h = $(".jqte_editor").html();
+                var ch = tracker.getCleanContent();
+                $.ajax({
+                    type: "POST",
+                    url: "SaveHTML",
+                    data: { html: h, cleanhtml: ch },
+                    success: function (res) {
+                        alert(JSON.stringify(res))
+                    },
+                    dataType: 'text/html'
+                });
+            });
+            $('#btnLoadTracked').click(function (e) {
+                load(true);
+            });
+            $('#btnLoadClean').click(function (e) {
+                load(false);
+            });
+            function load(tracked) {
+                $.ajax({
+                    type: "GET",
+                    url: "GetHTML?tracked=" + tracked,
+                    success: function (res) { $('.jqte_editor').html(res); }
+
+                });
+            }
+        });
+    </script>
+    <title>WithTE</title>
+</head>
+<body>
+    <div>
+        <h2>Ice Demo (With Jquery TE Editor)</h2>
+        <hr />
+        <div>
+            <select id="drpChange">
+                <option data-id="1">Admin SupraMed</option>
+                <option data-id="2">Kumar Kotha</option>
+                <option data-id="3">Hanmanth Kota</option>
+                <option data-id="4">Tulasi Mahi</option>
+                <option data-id="5">Hemasrinu Gadela</option>
+                <option data-id="6">Ramaraju Buddharaju</option>
+                <option data-id="7">Vinay M</option>
+                <option data-id="8">Prasinjit Sadhu</option>
+                <option data-id="9">Hema Srinu</option>
+                <option data-id="10">Krishna Arjuna</option>
+                <option data-id="11">Santhosh Koyalkar</option>
+                <option data-id="12">Kamesh Jalla</option>
+                <option data-id="13">Satish User</option>
+                <option data-id="14">Satish  Admin</option>
+                <option data-id="15">Kareem Khan</option>
+                <option data-id="16">Hanmanth K</option>
+                <option data-id="17">Tulasi M</option>
+                <option data-id="18">Deepthi Ramaraju</option>
+                <option data-id="19">Tejo J</option>
+                <option data-id="20">Ttt Kkk</option>
+                <option data-id="21">Swamy S</option>
+                <option data-id="22">Srilatha Bandi</option>
+                <option data-id="23">Pranay P</option>
+                <option data-id="24">Santhosh K</option>
+                <option data-id="25">Srividya K</option>
+                <option data-id="26">Mukesh Yadav</option>
+            </select>
+            <input type="button" value="Load Tracked" id="btnLoadTracked" />
+            <input type="button" value="Load Clean" id="btnLoadClean" />
+            <input type="button" value="Show/Hide Changes" id="btnShowHide" />
+            <input type="button" value="Accept Changes" id="btnAccept" />
+            <input type="button" value="Reject Changes" id="btnReject" />
+            <input type="button" value="Save" id="btnSave" />
+            <input type="checkbox" value="Track on/off" checked="checked" id="chkOnOff" /><label for="chkOnOff">Track Changes</label>
+        </div>
+        <div id="editor">
+        </div>
+    </div>
+</body>
+</html>

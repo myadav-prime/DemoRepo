@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            function hello(e) {
+                alert('hello');
+            }
+            $('#btn').bind('click.ice', hello);
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" id="btn" value="Click" />
+    </div>
+</body>
+</html>

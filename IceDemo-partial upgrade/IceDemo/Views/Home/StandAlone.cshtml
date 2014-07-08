@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stand Alone</title>
+     <link href="~/Contents/demo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+    	<script type="text/javascript" src='~/Scripts/rangy-core.js'></script>
+	<script type="text/javascript" src='~/Scripts/polyfills.js'></script>
+	<script type="text/javascript" src='~/Scripts/ice.js'></script>
+	<script type="text/javascript" src='~/Scripts/dom.js'></script>
+	<script type="text/javascript" src='~/Scripts/icePlugin.js'></script>
+	<script type="text/javascript" src='~/Scripts/icePluginManager.js'></script>
+	<script type="text/javascript" src='~/Scripts/bookmark.js'></script>
+	<script type="text/javascript" src='~/Scripts/selection.js'></script>
+	<script type="text/javascript" src='~/Scripts/plugins/IceAddTitlePlugin/IceAddTitlePlugin.js'></script>
+	<script type="text/javascript" src='~/Scripts/plugins/IceCopyPastePlugin/IceCopyPastePlugin.js'></script>
+	<script type="text/javascript" src='~/Scripts/plugins/IceEmdashPlugin/IceEmdashPlugin.js'></script>
+	<script type="text/javascript" src='~/Scripts/plugins/IceSmartQuotesPlugin/IceSmartQuotesPlugin.js'></script>
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            var tracker = new ice.InlineChangeEditor({
+                // element to track - ice will make it contenteditable
+                element: document.getElementById('editor'),
+                // tell ice to setup/handle events on the `element`
+                handleEvents: true,
+                // set a user object to associate with each change
+                currentUser: { id: 1, name: 'Admin SupraMed' }
+            });
+            // setup and start event handling for track changes
+            tracker.startTracking();
+        });
+    </script>
+</head>
+<body>
+    <div>
+         <h2>Ice Demo (Stand Alone)</h2>
+        <hr />
+       
+        <div id="editor" contenteditable="true">
+     Get the internal list of change objects which are modeled from all of the change tracking
+     nodes in the DOM. This might be useful to add a more sophisticated change tracking UI/UX.
+     The list is key'ed with the unique change ids (`cid attribute`) and points to an object
+     with metadata for a change: [changeid] => {`type`, `time`, `userid`, `username`}
+        </div>
+    </div>
+</body>
+</html>

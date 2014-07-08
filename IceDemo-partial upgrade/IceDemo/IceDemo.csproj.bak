@@ -1,0 +1,1518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6CDAF32-F5E1-4A23-BB2D-A2C7AF46E2E1}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IceDemo</RootNamespace>
+    <AssemblyName>IceDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Data.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.SpellChecker.v13.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Web.ASPxHtmlEditor.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxScheduler.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Web.ASPxScheduler.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Web.ASPxSpellChecker.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Web.ASPxThemes.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.Mvc.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Web.Mvc.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.Web.v13.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v13.1.Core, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\DevExpress.XtraScheduler.v13.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NetSpell.SpellChecker, Version=2.1.7.24956, Culture=neutral, PublicKeyToken=318b389f0db66e46, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\NetSpell.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="RichTextEditor, Version=8.1.0.0, Culture=neutral, PublicKeyToken=3858aa6802b1223a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>External\RichTextEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RTEController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Contents\ice.css" />
+    <Content Include="Contents\demo.css" />
+    <Content Include="Contents\jqte.css" />
+    <Content Include="Contents\jquery-te-1.4.0.css" />
+    <Content Include="Contents\jquery-te.png" />
+    <Content Include="External\DevExpress.Data.v13.1.dll" />
+    <Content Include="External\DevExpress.SpellChecker.v13.1.Core.dll" />
+    <Content Include="External\DevExpress.Web.ASPxHtmlEditor.v13.1.dll" />
+    <Content Include="External\DevExpress.Web.ASPxScheduler.v13.1.dll" />
+    <Content Include="External\DevExpress.Web.ASPxSpellChecker.v13.1.dll" />
+    <Content Include="External\DevExpress.Web.ASPxThemes.v13.1.dll" />
+    <Content Include="External\DevExpress.Web.Mvc.v13.1.dll" />
+    <Content Include="External\DevExpress.Web.v13.1.dll" />
+    <Content Include="External\DevExpress.XtraScheduler.v13.1.Core.dll" />
+    <Content Include="External\NetSpell.SpellChecker.dll" />
+    <Content Include="External\RichTextEditor.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="RTESource\richtexteditor\aspnet\colorpicker.aspx" />
+    <Content Include="RTESource\richtexteditor\aspnet\colorpicker.xml" />
+    <Content Include="RTESource\richtexteditor\aspnet\colorpicker_basic.aspx" />
+    <Content Include="RTESource\richtexteditor\aspnet\colorpicker_more.aspx" />
+    <Content Include="RTESource\richtexteditor\aspnet\colorpicker_more_ie.aspx" />
+    <Content Include="RTESource\richtexteditor\aspnet\colorpicker_more_ns.aspx" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\1x1.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpie_Color.cur" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpie_GradientPositionDark.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpie_GradientPositionLight.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpie_gradients.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpie_VerticalPosition.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpie_WebSafe.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_Color.cur" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_ColorSpace1.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_ColorSpace2.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_GradientPositionDark.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_GradientPositionLight.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_gradients.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_hue2.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_Vertical1.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_Vertical2.png" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_VerticalPosition.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\cpns_WebSafe.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\formbn.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\images\multiclavier.gif" />
+    <Content Include="RTESource\richtexteditor\aspnet\insertchars.htm" />
+    <Content Include="RTESource\richtexteditor\aspnet\insertchars.xml" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\ColorPicker_IE.css" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\ColorPicker_NS.css" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\dialog.css" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\Dialog_ColorPicker.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\Dialog_ColorPicker_IE.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\Dialog_ColorPicker_NS.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\insertchars.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\keyboard-data.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\keyboard-diacritic.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\keyboard-dialogue.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\keyboard-multihexa.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushCpp.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushCSharp.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushCss.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushDelphi.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushJava.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushJScript.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushPhp.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushPython.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushRuby.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushSql.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushVb.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shBrushXml.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\shCore.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\sh_Core.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\spell.css" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\spell.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\resx\virtualkeyboard.js" />
+    <Content Include="RTESource\richtexteditor\aspnet\SpellCheck.aspx" />
+    <Content Include="RTESource\richtexteditor\aspnet\spellcheck.xml" />
+    <Content Include="RTESource\richtexteditor\aspnet\syntaxhighlighter.htm" />
+    <Content Include="RTESource\richtexteditor\aspnet\syntaxhighlighter.xml" />
+    <Content Include="RTESource\richtexteditor\aspnet\virtualkeyboard.htm" />
+    <Content Include="RTESource\richtexteditor\aspnet\virtualkeyboard.xml" />
+    <Content Include="RTESource\richtexteditor\blank.htm" />
+    <Content Include="RTESource\richtexteditor\config\staticlinks.xml" />
+    <Content Include="RTESource\richtexteditor\config\staticstyles.xml" />
+    <Content Include="RTESource\richtexteditor\config\statictemplates.xml" />
+    <Content Include="RTESource\richtexteditor\core\core.js" />
+    <Content Include="RTESource\richtexteditor\core\jsml.js" />
+    <Content Include="RTESource\richtexteditor\core\scrollbar\default\barb_x.png" />
+    <Content Include="RTESource\richtexteditor\core\scrollbar\default\barb_y.png" />
+    <Content Include="RTESource\richtexteditor\core\scrollbar\default\bt_x.png" />
+    <Content Include="RTESource\richtexteditor\core\scrollbar\default\bt_y.png" />
+    <Content Include="RTESource\richtexteditor\core\scrollbar\default\fb_x.png" />
+    <Content Include="RTESource\richtexteditor\core\scrollbar\default\fb_y.png" />
+    <Content Include="RTESource\richtexteditor\core\uploader.js" />
+    <Content Include="RTESource\richtexteditor\dialogs\basic_alert.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\basic_confirm.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\basic_prompt.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\browsedialogbase.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\cleancode.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\colorpicker.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\editor_paste.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\findandreplace.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\foldertree.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\htmlpreview.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\imageeditor.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\document.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\dot_ring.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\insert_table_bg1.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\insert_table_bg2.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\tree_closed.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\tree_opened.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\images\url_icon.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertanchor.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertdate.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertdocument.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertgallery.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertimage.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertimagemap.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertimagemaplink.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertlink.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertlink_dropdown.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertlink_findanchor.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertlink_findurl.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\inserttable.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\inserttabletemplate.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\inserttemplate.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\inserttemplate_dropdown.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\insertvideo.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_context.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_context_default.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_context_minimal.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_context_simple.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_dragdrop.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_styles.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\menu_tagitem.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\overriderename.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\phone_common.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\phone_format.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\phone_insert.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\phone_paragraph.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\phone_select.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\phone_text.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_background.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_block.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_border.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_box.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_font.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_layout.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_list.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_other.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_position.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_style_table.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_a.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_audio.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_button.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_common.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_div.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_form.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_input.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_select.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_table.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_textarea.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\properties_tag_video.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\setfontname.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\setfontsize.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\setparagraph.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\setstyles.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\blue\blue-bg.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\blue\blue-bg.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\blue\blue-close.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\blue\blue-icon.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\Classic.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\classic\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\default\top.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\default\top_left.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\default\top_middle.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\default\top_right.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\Indigo.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\MacBlue.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macblue\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\MacWhite.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\macwhite\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\closebtn.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\closebtn_over.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\icon_dialog.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\newgreen\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\Normal.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\normal\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\Royale.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\royale\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\btm_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\btm_center.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\btm_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\btm_left.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\btm_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\btm_right.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\close.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\mdl_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\mdl_left.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\mdl_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\mdl_right.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\top_center.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\top_center.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\top_left.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\top_left.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\top_right.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\skins\seven\top_right.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\storagelist.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadinfo.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\blocks.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\circle.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\continuous.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\progress.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\resuming.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\stop.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\uploaderror.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\uploading.gif" />
+    <Content Include="RTESource\richtexteditor\dialogs\uploadprogress\uploadok.png" />
+    <Content Include="RTESource\richtexteditor\dialogs\_developer.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\_dialog.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\_skins.xml" />
+    <Content Include="RTESource\richtexteditor\dialogs\__sample.xml" />
+    <Content Include="RTESource\richtexteditor\downlevel\blank.htm" />
+    <Content Include="RTESource\richtexteditor\downlevel\common.xml" />
+    <Content Include="RTESource\richtexteditor\downlevel\downlevel.js" />
+    <Content Include="RTESource\richtexteditor\downlevel\rtehtm.js" />
+    <Content Include="RTESource\richtexteditor\downlevel\rtehtm.xml" />
+    <Content Include="RTESource\richtexteditor\downlevel\rteubb.js" />
+    <Content Include="RTESource\richtexteditor\downlevel\rteubb.xml" />
+    <Content Include="RTESource\richtexteditor\downlevel\style.css" />
+    <Content Include="RTESource\richtexteditor\help\fontname.png" />
+    <Content Include="RTESource\richtexteditor\help\fontsize.png" />
+    <Content Include="RTESource\richtexteditor\help\home.htm" />
+    <Content Include="RTESource\richtexteditor\help\paragraph.png" />
+    <Content Include="RTESource\richtexteditor\help\style.png" />
+    <Content Include="RTESource\richtexteditor\help\toolbar.png" />
+    <Content Include="RTESource\richtexteditor\images\accessibility.gif" />
+    <Content Include="RTESource\richtexteditor\images\all.png" />
+    <Content Include="RTESource\richtexteditor\images\anchor.gif" />
+    <Content Include="RTESource\richtexteditor\images\anchor.png" />
+    <Content Include="RTESource\richtexteditor\images\applystyles.png" />
+    <Content Include="RTESource\richtexteditor\images\arj.gif" />
+    <Content Include="RTESource\richtexteditor\images\arrow-l.png" />
+    <Content Include="RTESource\richtexteditor\images\arrow-r.png" />
+    <Content Include="RTESource\richtexteditor\images\arrow.gif" />
+    <Content Include="RTESource\richtexteditor\images\arrow_down.gif" />
+    <Content Include="RTESource\richtexteditor\images\arrow_r.gif" />
+    <Content Include="RTESource\richtexteditor\images\arrow_up.gif" />
+    <Content Include="RTESource\richtexteditor\images\asa.gif" />
+    <Content Include="RTESource\richtexteditor\images\asax.gif" />
+    <Content Include="RTESource\richtexteditor\images\ascx.gif" />
+    <Content Include="RTESource\richtexteditor\images\asmx.gif" />
+    <Content Include="RTESource\richtexteditor\images\asp.gif" />
+    <Content Include="RTESource\richtexteditor\images\aspx.gif" />
+    <Content Include="RTESource\richtexteditor\images\au.gif" />
+    <Content Include="RTESource\richtexteditor\images\avi.gif" />
+    <Content Include="RTESource\richtexteditor\images\b1.gif" />
+    <Content Include="RTESource\richtexteditor\images\b1.png" />
+    <Content Include="RTESource\richtexteditor\images\backcolor.png" />
+    <Content Include="RTESource\richtexteditor\images\backspace.png" />
+    <Content Include="RTESource\richtexteditor\images\bat.gif" />
+    <Content Include="RTESource\richtexteditor\images\bg.gif" />
+    <Content Include="RTESource\richtexteditor\images\blank20.png" />
+    <Content Include="RTESource\richtexteditor\images\blockquote.png" />
+    <Content Include="RTESource\richtexteditor\images\bmp.gif" />
+    <Content Include="RTESource\richtexteditor\images\bold.png" />
+    <Content Include="RTESource\richtexteditor\images\borders.png" />
+    <Content Include="RTESource\richtexteditor\images\borders2.png" />
+    <Content Include="RTESource\richtexteditor\images\bottomline.png" />
+    <Content Include="RTESource\richtexteditor\images\box.png" />
+    <Content Include="RTESource\richtexteditor\images\break.png" />
+    <Content Include="RTESource\richtexteditor\images\bullist.png" />
+    <Content Include="RTESource\richtexteditor\images\cab.gif" />
+    <Content Include="RTESource\richtexteditor\images\cell.png" />
+    <Content Include="RTESource\richtexteditor\images\center.png" />
+    <Content Include="RTESource\richtexteditor\images\checkbox.png" />
+    <Content Include="RTESource\richtexteditor\images\chm.gif" />
+    <Content Include="RTESource\richtexteditor\images\cleanup.png" />
+    <Content Include="RTESource\richtexteditor\images\close.gif" />
+    <Content Include="RTESource\richtexteditor\images\Close2.gif" />
+    <Content Include="RTESource\richtexteditor\images\closedfolder.gif" />
+    <Content Include="RTESource\richtexteditor\images\code.png" />
+    <Content Include="RTESource\richtexteditor\images\colorbox.gif" />
+    <Content Include="RTESource\richtexteditor\images\com.gif" />
+    <Content Include="RTESource\richtexteditor\images\copy.png" />
+    <Content Include="RTESource\richtexteditor\images\cs.gif" />
+    <Content Include="RTESource\richtexteditor\images\css.gif" />
+    <Content Include="RTESource\richtexteditor\images\cut.png" />
+    <Content Include="RTESource\richtexteditor\images\delcell.png" />
+    <Content Include="RTESource\richtexteditor\images\delcol.png" />
+    <Content Include="RTESource\richtexteditor\images\delete.png" />
+    <Content Include="RTESource\richtexteditor\images\delrow.png" />
+    <Content Include="RTESource\richtexteditor\images\design.png" />
+    <Content Include="RTESource\richtexteditor\images\dir_ltr.gif" />
+    <Content Include="RTESource\richtexteditor\images\dir_ltr.png" />
+    <Content Include="RTESource\richtexteditor\images\dir_rtl.png" />
+    <Content Include="RTESource\richtexteditor\images\disco.gif" />
+    <Content Include="RTESource\richtexteditor\images\div.png" />
+    <Content Include="RTESource\richtexteditor\images\dll.gif" />
+    <Content Include="RTESource\richtexteditor\images\doc.gif" />
+    <Content Include="RTESource\richtexteditor\images\document.png" />
+    <Content Include="RTESource\richtexteditor\images\docx.gif" />
+    <Content Include="RTESource\richtexteditor\images\dragcopy.gif" />
+    <Content Include="RTESource\richtexteditor\images\dragmove.gif" />
+    <Content Include="RTESource\richtexteditor\images\dropdownbox.png" />
+    <Content Include="RTESource\richtexteditor\images\edit.gif" />
+    <Content Include="RTESource\richtexteditor\images\exe.gif" />
+    <Content Include="RTESource\richtexteditor\images\external.gif" />
+    <Content Include="RTESource\richtexteditor\images\filter_c.gif" />
+    <Content Include="RTESource\richtexteditor\images\filter_l.gif" />
+    <Content Include="RTESource\richtexteditor\images\filter_m.gif" />
+    <Content Include="RTESource\richtexteditor\images\filter_r.gif" />
+    <Content Include="RTESource\richtexteditor\images\find.png" />
+    <Content Include="RTESource\richtexteditor\images\fit.png" />
+    <Content Include="RTESource\richtexteditor\images\flash.png" />
+    <Content Include="RTESource\richtexteditor\images\flashholder.gif" />
+    <Content Include="RTESource\richtexteditor\images\floatblock.gif" />
+    <Content Include="RTESource\richtexteditor\images\floatleft.gif" />
+    <Content Include="RTESource\richtexteditor\images\floatnone.gif" />
+    <Content Include="RTESource\richtexteditor\images\floatright.gif" />
+    <Content Include="RTESource\richtexteditor\images\flv.gif" />
+    <Content Include="RTESource\richtexteditor\images\folder.png" />
+    <Content Include="RTESource\richtexteditor\images\folders.png" />
+    <Content Include="RTESource\richtexteditor\images\folder_up.png" />
+    <Content Include="RTESource\richtexteditor\images\font-size.png" />
+    <Content Include="RTESource\richtexteditor\images\font-type.png" />
+    <Content Include="RTESource\richtexteditor\images\font.png" />
+    <Content Include="RTESource\richtexteditor\images\forecolor.png" />
+    <Content Include="RTESource\richtexteditor\images\formatcode.png" />
+    <Content Include="RTESource\richtexteditor\images\formatpainter.png" />
+    <Content Include="RTESource\richtexteditor\images\gallery.png" />
+    <Content Include="RTESource\richtexteditor\images\gif.gif" />
+    <Content Include="RTESource\richtexteditor\images\groupbox.png" />
+    <Content Include="RTESource\richtexteditor\images\heading.png" />
+    <Content Include="RTESource\richtexteditor\images\help.png" />
+    <Content Include="RTESource\richtexteditor\images\hiddenfield.png" />
+    <Content Include="RTESource\richtexteditor\images\hlp.gif" />
+    <Content Include="RTESource\richtexteditor\images\horizontal.gif" />
+    <Content Include="RTESource\richtexteditor\images\htm.gif" />
+    <Content Include="RTESource\richtexteditor\images\html.gif" />
+    <Content Include="RTESource\richtexteditor\images\html5.png" />
+    <Content Include="RTESource\richtexteditor\images\htmlview.png" />
+    <Content Include="RTESource\richtexteditor\images\icon_add.png" />
+    <Content Include="RTESource\richtexteditor\images\image.png" />
+    <Content Include="RTESource\richtexteditor\images\imagebutton.png" />
+    <Content Include="RTESource\richtexteditor\images\imageeditor.png" />
+    <Content Include="RTESource\richtexteditor\images\imageholder.gif" />
+    <Content Include="RTESource\richtexteditor\images\ImageMap.png" />
+    <Content Include="RTESource\richtexteditor\images\inc.gif" />
+    <Content Include="RTESource\richtexteditor\images\indent.png" />
+    <Content Include="RTESource\richtexteditor\images\ini.gif" />
+    <Content Include="RTESource\richtexteditor\images\inscell.png" />
+    <Content Include="RTESource\richtexteditor\images\inscol_l.png" />
+    <Content Include="RTESource\richtexteditor\images\inscol_r.png" />
+    <Content Include="RTESource\richtexteditor\images\insertDate.png" />
+    <Content Include="RTESource\richtexteditor\images\insertform.png" />
+    <Content Include="RTESource\richtexteditor\images\InsertPageBreak.png" />
+    <Content Include="RTESource\richtexteditor\images\inserttable.png" />
+    <Content Include="RTESource\richtexteditor\images\insrow_b.png" />
+    <Content Include="RTESource\richtexteditor\images\insrow_t.png" />
+    <Content Include="RTESource\richtexteditor\images\instable.png" />
+    <Content Include="RTESource\richtexteditor\images\italic.png" />
+    <Content Include="RTESource\richtexteditor\images\jpeg.gif" />
+    <Content Include="RTESource\richtexteditor\images\jpg.gif" />
+    <Content Include="RTESource\richtexteditor\images\justifyfull.png" />
+    <Content Include="RTESource\richtexteditor\images\justifynone.png" />
+    <Content Include="RTESource\richtexteditor\images\keyboard.png" />
+    <Content Include="RTESource\richtexteditor\images\l1.gif" />
+    <Content Include="RTESource\richtexteditor\images\l1.png" />
+    <Content Include="RTESource\richtexteditor\images\l2.gif" />
+    <Content Include="RTESource\richtexteditor\images\l2.png" />
+    <Content Include="RTESource\richtexteditor\images\layer.png" />
+    <Content Include="RTESource\richtexteditor\images\lcase.png" />
+    <Content Include="RTESource\richtexteditor\images\left.png" />
+    <Content Include="RTESource\richtexteditor\images\lineheight.png" />
+    <Content Include="RTESource\richtexteditor\images\link.png" />
+    <Content Include="RTESource\richtexteditor\images\listbox.png" />
+    <Content Include="RTESource\richtexteditor\images\loading3.gif" />
+    <Content Include="RTESource\richtexteditor\images\loading5.gif" />
+    <Content Include="RTESource\richtexteditor\images\locked.gif" />
+    <Content Include="RTESource\richtexteditor\images\log.gif" />
+    <Content Include="RTESource\richtexteditor\images\map.png" />
+    <Content Include="RTESource\richtexteditor\images\marginbottom.png" />
+    <Content Include="RTESource\richtexteditor\images\margintop.png" />
+    <Content Include="RTESource\richtexteditor\images\mdb.gif" />
+    <Content Include="RTESource\richtexteditor\images\media.png" />
+    <Content Include="RTESource\richtexteditor\images\menuleft.gif" />
+    <Content Include="RTESource\richtexteditor\images\mid.gif" />
+    <Content Include="RTESource\richtexteditor\images\midi.gif" />
+    <Content Include="RTESource\richtexteditor\images\minus.gif" />
+    <Content Include="RTESource\richtexteditor\images\mov.gif" />
+    <Content Include="RTESource\richtexteditor\images\move.png" />
+    <Content Include="RTESource\richtexteditor\images\movieholder.gif" />
+    <Content Include="RTESource\richtexteditor\images\mp3.gif" />
+    <Content Include="RTESource\richtexteditor\images\mp4.gif" />
+    <Content Include="RTESource\richtexteditor\images\mpeg.gif" />
+    <Content Include="RTESource\richtexteditor\images\mpg.gif" />
+    <Content Include="RTESource\richtexteditor\images\mrgcell.png" />
+    <Content Include="RTESource\richtexteditor\images\msgbox_alert.gif" />
+    <Content Include="RTESource\richtexteditor\images\m_anchor.png" />
+    <Content Include="RTESource\richtexteditor\images\m_arrow_right-up.png" />
+    <Content Include="RTESource\richtexteditor\images\m_back.png" />
+    <Content Include="RTESource\richtexteditor\images\m_backcolor.png" />
+    <Content Include="RTESource\richtexteditor\images\m_blockquote.png" />
+    <Content Include="RTESource\richtexteditor\images\m_bold.png" />
+    <Content Include="RTESource\richtexteditor\images\m_borders.png" />
+    <Content Include="RTESource\richtexteditor\images\m_bottomline.png" />
+    <Content Include="RTESource\richtexteditor\images\m_break.png" />
+    <Content Include="RTESource\richtexteditor\images\m_center.png" />
+    <Content Include="RTESource\richtexteditor\images\m_cleanup.png" />
+    <Content Include="RTESource\richtexteditor\images\m_copy.png" />
+    <Content Include="RTESource\richtexteditor\images\m_cut.png" />
+    <Content Include="RTESource\richtexteditor\images\m_div.png" />
+    <Content Include="RTESource\richtexteditor\images\m_document.png" />
+    <Content Include="RTESource\richtexteditor\images\m_edit.png" />
+    <Content Include="RTESource\richtexteditor\images\m_find.png" />
+    <Content Include="RTESource\richtexteditor\images\m_font.png" />
+    <Content Include="RTESource\richtexteditor\images\m_fontsize.png" />
+    <Content Include="RTESource\richtexteditor\images\m_forecolor.png" />
+    <Content Include="RTESource\richtexteditor\images\m_groupbox.png" />
+    <Content Include="RTESource\richtexteditor\images\m_hand.png" />
+    <Content Include="RTESource\richtexteditor\images\m_help.png" />
+    <Content Include="RTESource\richtexteditor\images\m_image.png" />
+    <Content Include="RTESource\richtexteditor\images\m_indent.png" />
+    <Content Include="RTESource\richtexteditor\images\m_insertDate.png" />
+    <Content Include="RTESource\richtexteditor\images\m_insertdiv.png" />
+    <Content Include="RTESource\richtexteditor\images\m_insertpagebreak.png" />
+    <Content Include="RTESource\richtexteditor\images\m_italic.png" />
+    <Content Include="RTESource\richtexteditor\images\m_justifyfull.png" />
+    <Content Include="RTESource\richtexteditor\images\m_justifynone.png" />
+    <Content Include="RTESource\richtexteditor\images\m_lcase.png" />
+    <Content Include="RTESource\richtexteditor\images\m_left.png" />
+    <Content Include="RTESource\richtexteditor\images\m_link.png" />
+    <Content Include="RTESource\richtexteditor\images\m_map.png" />
+    <Content Include="RTESource\richtexteditor\images\m_media.png" />
+    <Content Include="RTESource\richtexteditor\images\m_menu.png" />
+    <Content Include="RTESource\richtexteditor\images\m_new.png" />
+    <Content Include="RTESource\richtexteditor\images\m_numlist.png" />
+    <Content Include="RTESource\richtexteditor\images\m_outdent.png" />
+    <Content Include="RTESource\richtexteditor\images\m_overline.png" />
+    <Content Include="RTESource\richtexteditor\images\m_paragraph.png" />
+    <Content Include="RTESource\richtexteditor\images\m_paste.png" />
+    <Content Include="RTESource\richtexteditor\images\m_pastetext.png" />
+    <Content Include="RTESource\richtexteditor\images\m_redo.png" />
+    <Content Include="RTESource\richtexteditor\images\m_return.png" />
+    <Content Include="RTESource\richtexteditor\images\m_right.png" />
+    <Content Include="RTESource\richtexteditor\images\m_rule.png" />
+    <Content Include="RTESource\richtexteditor\images\m_save.png" />
+    <Content Include="RTESource\richtexteditor\images\m_select.png" />
+    <Content Include="RTESource\richtexteditor\images\m_selectall.png" />
+    <Content Include="RTESource\richtexteditor\images\m_selectbottom.png" />
+    <Content Include="RTESource\richtexteditor\images\m_selectparagraph.png" />
+    <Content Include="RTESource\richtexteditor\images\m_selecttop.png" />
+    <Content Include="RTESource\richtexteditor\images\m_specialchar.png" />
+    <Content Include="RTESource\richtexteditor\images\m_spell.png" />
+    <Content Include="RTESource\richtexteditor\images\m_strike.png" />
+    <Content Include="RTESource\richtexteditor\images\m_subscript.png" />
+    <Content Include="RTESource\richtexteditor\images\m_superscript.png" />
+    <Content Include="RTESource\richtexteditor\images\m_table.png" />
+    <Content Include="RTESource\richtexteditor\images\m_text.png" />
+    <Content Include="RTESource\richtexteditor\images\m_topline.png" />
+    <Content Include="RTESource\richtexteditor\images\m_ucase.png" />
+    <Content Include="RTESource\richtexteditor\images\m_under.png" />
+    <Content Include="RTESource\richtexteditor\images\m_undo.png" />
+    <Content Include="RTESource\richtexteditor\images\m_unformat.png" />
+    <Content Include="RTESource\richtexteditor\images\m_upload.png" />
+    <Content Include="RTESource\richtexteditor\images\m_youtube.png" />
+    <Content Include="RTESource\richtexteditor\images\newdoc.png" />
+    <Content Include="RTESource\richtexteditor\images\newfolder.gif" />
+    <Content Include="RTESource\richtexteditor\images\newtag.png" />
+    <Content Include="RTESource\richtexteditor\images\node-tree.png" />
+    <Content Include="RTESource\richtexteditor\images\noneditable.gif" />
+    <Content Include="RTESource\richtexteditor\images\numdown.gif" />
+    <Content Include="RTESource\richtexteditor\images\numlist.png" />
+    <Content Include="RTESource\richtexteditor\images\numup.gif" />
+    <Content Include="RTESource\richtexteditor\images\openfolder.png" />
+    <Content Include="RTESource\richtexteditor\images\optionbutton.png" />
+    <Content Include="RTESource\richtexteditor\images\orderby.gif" />
+    <Content Include="RTESource\richtexteditor\images\outdent.png" />
+    <Content Include="RTESource\richtexteditor\images\overline.png" />
+    <Content Include="RTESource\richtexteditor\images\p.png" />
+    <Content Include="RTESource\richtexteditor\images\page.png" />
+    <Content Include="RTESource\richtexteditor\images\paragraph.png" />
+    <Content Include="RTESource\richtexteditor\images\parentfolder.png" />
+    <Content Include="RTESource\richtexteditor\images\passwordfield.png" />
+    <Content Include="RTESource\richtexteditor\images\paste.png" />
+    <Content Include="RTESource\richtexteditor\images\pastetext.png" />
+    <Content Include="RTESource\richtexteditor\images\pasteword.png" />
+    <Content Include="RTESource\richtexteditor\images\pdf.gif" />
+    <Content Include="RTESource\richtexteditor\images\png.gif" />
+    <Content Include="RTESource\richtexteditor\images\ppt.gif" />
+    <Content Include="RTESource\richtexteditor\images\preview.png" />
+    <Content Include="RTESource\richtexteditor\images\print.png" />
+    <Content Include="RTESource\richtexteditor\images\properties.png" />
+    <Content Include="RTESource\richtexteditor\images\pushbutton.png" />
+    <Content Include="RTESource\richtexteditor\images\r1.gif" />
+    <Content Include="RTESource\richtexteditor\images\r1.png" />
+    <Content Include="RTESource\richtexteditor\images\r2.gif" />
+    <Content Include="RTESource\richtexteditor\images\r2.png" />
+    <Content Include="RTESource\richtexteditor\images\rar.gif" />
+    <Content Include="RTESource\richtexteditor\images\redo.png" />
+    <Content Include="RTESource\richtexteditor\images\refresh.gif" />
+    <Content Include="RTESource\richtexteditor\images\removetag.png" />
+    <Content Include="RTESource\richtexteditor\images\reset.png" />
+    <Content Include="RTESource\richtexteditor\images\ribbonpaste.png" />
+    <Content Include="RTESource\richtexteditor\images\ribbontable.png" />
+    <Content Include="RTESource\richtexteditor\images\right.png" />
+    <Content Include="RTESource\richtexteditor\images\row.png" />
+    <Content Include="RTESource\richtexteditor\images\rtf.gif" />
+    <Content Include="RTESource\richtexteditor\images\rule.png" />
+    <Content Include="RTESource\richtexteditor\images\ruler-horizontal.png" />
+    <Content Include="RTESource\richtexteditor\images\ruler-vertical.png" />
+    <Content Include="RTESource\richtexteditor\images\rulercorner.png" />
+    <Content Include="RTESource\richtexteditor\images\save.png" />
+    <Content Include="RTESource\richtexteditor\images\selectall.png" />
+    <Content Include="RTESource\richtexteditor\images\selectnone.png" />
+    <Content Include="RTESource\richtexteditor\images\Separator.gif" />
+    <Content Include="RTESource\richtexteditor\images\slider-handle-up.png" />
+    <Content Include="RTESource\richtexteditor\images\sort.gif" />
+    <Content Include="RTESource\richtexteditor\images\sort_asc_arrow.gif" />
+    <Content Include="RTESource\richtexteditor\images\sort_desc_arrow.gif" />
+    <Content Include="RTESource\richtexteditor\images\specialchar.png" />
+    <Content Include="RTESource\richtexteditor\images\spell.png" />
+    <Content Include="RTESource\richtexteditor\images\spltcell.png" />
+    <Content Include="RTESource\richtexteditor\images\stop.png" />
+    <Content Include="RTESource\richtexteditor\images\strike.png" />
+    <Content Include="RTESource\richtexteditor\images\submit.png" />
+    <Content Include="RTESource\richtexteditor\images\subscript.png" />
+    <Content Include="RTESource\richtexteditor\images\superscript.png" />
+    <Content Include="RTESource\richtexteditor\images\swf.gif" />
+    <Content Include="RTESource\richtexteditor\images\sys.gif" />
+    <Content Include="RTESource\richtexteditor\images\t1.gif" />
+    <Content Include="RTESource\richtexteditor\images\t1.png" />
+    <Content Include="RTESource\richtexteditor\images\t2.gif" />
+    <Content Include="RTESource\richtexteditor\images\t2.png" />
+    <Content Include="RTESource\richtexteditor\images\t3.gif" />
+    <Content Include="RTESource\richtexteditor\images\t3.png" />
+    <Content Include="RTESource\richtexteditor\images\tbdown.gif" />
+    <Content Include="RTESource\richtexteditor\images\template.png" />
+    <Content Include="RTESource\richtexteditor\images\textarea.png" />
+    <Content Include="RTESource\richtexteditor\images\textbox.png" />
+    <Content Include="RTESource\richtexteditor\images\timer.png" />
+    <Content Include="RTESource\richtexteditor\images\toolbarbutton.over.gif" />
+    <Content Include="RTESource\richtexteditor\images\topline.png" />
+    <Content Include="RTESource\richtexteditor\images\txt.gif" />
+    <Content Include="RTESource\richtexteditor\images\ucase.png" />
+    <Content Include="RTESource\richtexteditor\images\ul-circle.png" />
+    <Content Include="RTESource\richtexteditor\images\ul-disc.png" />
+    <Content Include="RTESource\richtexteditor\images\ul-square.png" />
+    <Content Include="RTESource\richtexteditor\images\under.png" />
+    <Content Include="RTESource\richtexteditor\images\undo.png" />
+    <Content Include="RTESource\richtexteditor\images\unformat.png" />
+    <Content Include="RTESource\richtexteditor\images\unknown.gif" />
+    <Content Include="RTESource\richtexteditor\images\unlink.png" />
+    <Content Include="RTESource\richtexteditor\images\unlocked.gif" />
+    <Content Include="RTESource\richtexteditor\images\upload.gif" />
+    <Content Include="RTESource\richtexteditor\images\uploadimage.png" />
+    <Content Include="RTESource\richtexteditor\images\vb.gif" />
+    <Content Include="RTESource\richtexteditor\images\vbs.gif" />
+    <Content Include="RTESource\richtexteditor\images\video.png" />
+    <Content Include="RTESource\richtexteditor\images\vsdisco.gif" />
+    <Content Include="RTESource\richtexteditor\images\watermark.png" />
+    <Content Include="RTESource\richtexteditor\images\wav.gif" />
+    <Content Include="RTESource\richtexteditor\images\wbr.png" />
+    <Content Include="RTESource\richtexteditor\images\wmv.gif" />
+    <Content Include="RTESource\richtexteditor\images\wri.gif" />
+    <Content Include="RTESource\richtexteditor\images\xls.gif" />
+    <Content Include="RTESource\richtexteditor\images\xlsx.gif" />
+    <Content Include="RTESource\richtexteditor\images\xml.gif" />
+    <Content Include="RTESource\richtexteditor\images\youtube.png" />
+    <Content Include="RTESource\richtexteditor\images\zip.gif" />
+    <Content Include="RTESource\richtexteditor\lang\lang-da.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-de.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-es.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-fr.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-he.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-it.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-ja.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-ko.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-nl.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-no.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-pt.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-sv.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-zh-cn.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-zh-tw.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang-zh.js" />
+    <Content Include="RTESource\richtexteditor\lang\lang.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-da.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-de.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-es.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-fr.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-he.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-it.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-ja.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-ko.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-nl.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-no.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-pt.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-sv.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-zh-cn.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-zh-tw.js" />
+    <Content Include="RTESource\richtexteditor\lang\more-zh.js" />
+    <Content Include="RTESource\richtexteditor\lang\more.js" />
+    <Content Include="RTESource\richtexteditor\player\flashplayer.swf" />
+    <Content Include="RTESource\richtexteditor\player\googleplayer.swf" />
+    <Content Include="RTESource\richtexteditor\player\play.png" />
+    <Content Include="RTESource\richtexteditor\player\player.htm" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\12close.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\12closered.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\arrow-l.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\arrow-r.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\close.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\corner.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\dot_ring.6.png" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\reset.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\resizecorner.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\images\url_icon.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\controldesigner\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\elementtoolbar\images\url_icon.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\elementtoolbar\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\googlemap\googlemap.htm" />
+    <Content Include="RTESource\richtexteditor\plugins\googlemap\googlemap.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\googlemap\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\insertchars\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\insertyoutube\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\insertyoutube\youtube.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilehelper\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\common.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\debug.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\fontname.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\fontsize.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\format.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\12close.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\12closered.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\arrow-l.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\arrow-r.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\close.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\corner.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\dot_ring.6.png" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\reset.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\resizecorner.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\images\url_icon.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\insert.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\insertform.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\insertlist.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\insertwhere.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\maincontrol.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\mainpoint.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\mainrange.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\paragraph.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\select.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\tagitem.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\taglist.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\typetext.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\uploadimage.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\_dialog.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\mobilesidebar\__sample.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\pageproperties\pageprops.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\pageproperties\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\resizecorner\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\resizecorner\resizecorner.gif" />
+    <Content Include="RTESource\richtexteditor\plugins\spellcheck\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\statistics\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\syntaxhighlighter\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\syntaxhighlighter\syntaxhighlighter.css" />
+    <Content Include="RTESource\richtexteditor\plugins\taglist\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\toolbar_code\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\toolbar_view\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\virtualkeyboard\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\zoomview\plugin.xml" />
+    <Content Include="RTESource\richtexteditor\plugins\zoomview\zoomlist.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\dialog.htm" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\DrawImage.html4.aspx" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\ImageEditorLib.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\back\group.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\back\list.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\back\menubar.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\back\toolbar.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\colorpicker.cur" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\colorpicker.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\composite_destinationin.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\composite_destinationout.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\composite_sourceover.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\composite_xor.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\copy.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\crop.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\cut.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\delete.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\elli.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\erase.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\exchange.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\eye-visible.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\fliph.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\flipv.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\grad.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\grad_radial.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\image.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\layerstyle.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\line.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\new.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\paste.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\pattern\patt_1.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\pattern\patt_2.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\pen.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\point.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\rect.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\redo.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\resize.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\rotate.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\rotateleft90.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\rotateright90.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\save.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\scrollbar.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\select.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\selectback.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\submenu.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\text.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\toolmerge.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\toolmoveup.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\transback.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\undo.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\zoom.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\zoomin.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\images\zoomout.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\Language.aspx" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\language\en.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\language\en_us.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\language\zh_cn.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\menuimpl.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\refreshimage.aspx" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\SaveImage.html4.aspx" />
+    <Content Include="RTESource\richtexteditor\rtepaint4\Style.css" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\adjust.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\border.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\contextmenu.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\create.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\effect.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\layerproperty.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\submenu.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\addon\watermark.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\common.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\dialog.htm" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\dropdown\bool.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\dropdown\font.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\dropdown\fontfamily.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\dropdown\fontsize.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\effect.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\html5.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\html5ui.xml" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\accept.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\arc.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\arrow.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\back\group.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\back\list.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\back\menubar.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\back\toolbar.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\close.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\colorpicker.cur" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\colorpicker.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\composite_destinationin.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\composite_destinationout.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\composite_sourceover.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\composite_xor.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\crop.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\blur.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\bright.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\fog.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\grayscale.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\hsl.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\invert.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\mosaic.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\neon.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\pencil.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\relief.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_aqua.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_coldblue.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_coldgreen.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_concorde.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_elegant.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_fresh.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_indiglow.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_old.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_singe.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_softfocus.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sample_vivid.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sunshine.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\sunshine.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\twovalue.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\effect\unsharp.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\erase.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\exchange.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\eye-visible.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\fill.cur" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\fill.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\fliph.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\flipv.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\font.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\font\anandaneptouch.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\font\worldwideweb.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_1.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_10.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_2.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_20.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_3.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_30.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_4.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\brooch_40.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\fallleaf.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\fallleaf_1.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\fallleaf_2.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\fallleaf_3.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\fallleaf_4.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\greenflower.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\leaf.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_1.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_10.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_2.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_20.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_3.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_30.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_4.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\redline_40.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\frame\rope.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\freesize.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\free_b.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\free_l.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\free_r.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\free_t.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\grad.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\grad_radial.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\layerstyle.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\line.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\loading.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menuleft.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\adjust.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\copy.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\cut.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\effect.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\new.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\paste.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\redo.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\save.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\menu\undo.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\pattern\patt_1.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\pattern\patt_2.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\pen.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\polygon.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\rect.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\redeye.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\resize.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\rotate.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\rotateleft90.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\rotateright90.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\scrollbar.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\select.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\stamp.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\star.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\submenu.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\tbdown.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\text.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\toolmerge.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\toolmoveup.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\toolnewlayer.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\toolopenfile.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\toolrecycle.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\transback.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\watermark\sample1.jpg" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\watermark\sample2.jpg" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\watermark\sample3.jpg" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\watermark\sample4.gif" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\watermark\sample5.jpg" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\zoom.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\zoomin.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\images\zoomout.png" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\Language.aspx" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\language\en.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\language\en_us.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\language\zh_cn.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\refreshimage.aspx" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\refreshimage.htm" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\tools.js" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\uielement.xml" />
+    <Content Include="RTESource\richtexteditor\scripts\blank.htm" />
+    <Content Include="RTESource\richtexteditor\scripts\blankhtml4.htm" />
+    <Content Include="RTESource\richtexteditor\scripts\blankhtml5.htm" />
+    <Content Include="RTESource\richtexteditor\scripts\blankxhtml.htm" />
+    <Content Include="RTESource\richtexteditor\scripts\common.xml" />
+    <Content Include="RTESource\richtexteditor\scripts\config.js" />
+    <Content Include="RTESource\richtexteditor\scripts\editor.js" />
+    <Content Include="RTESource\richtexteditor\scripts\ihtml5.js" />
+    <Content Include="RTESource\richtexteditor\scripts\loader.js" />
+    <Content Include="RTESource\richtexteditor\scripts\rtefc.swf" />
+    <Content Include="RTESource\richtexteditor\scripts\tabview.js" />
+    <Content Include="RTESource\richtexteditor\server\colorpicker.htm" />
+    <Content Include="RTESource\richtexteditor\server\colorpicker.xml" />
+    <Content Include="RTESource\richtexteditor\server\colorpicker_basic.htm" />
+    <Content Include="RTESource\richtexteditor\server\colorpicker_more.htm" />
+    <Content Include="RTESource\richtexteditor\server\colorpicker_more_ie.htm" />
+    <Content Include="RTESource\richtexteditor\server\colorpicker_more_ns.htm" />
+    <Content Include="RTESource\richtexteditor\server\images\1x1.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpie_Color.cur" />
+    <Content Include="RTESource\richtexteditor\server\images\cpie_GradientPositionDark.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpie_GradientPositionLight.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpie_gradients.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpie_VerticalPosition.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpie_WebSafe.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_Color.cur" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_ColorSpace1.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_ColorSpace2.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_GradientPositionDark.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_GradientPositionLight.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_gradients.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_hue2.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_Vertical1.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_Vertical2.png" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_VerticalPosition.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\cpns_WebSafe.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\formbn.gif" />
+    <Content Include="RTESource\richtexteditor\server\images\multiclavier.gif" />
+    <Content Include="RTESource\richtexteditor\server\insertchars.htm" />
+    <Content Include="RTESource\richtexteditor\server\insertchars.xml" />
+    <Content Include="RTESource\richtexteditor\server\resx\ColorPicker_IE.css" />
+    <Content Include="RTESource\richtexteditor\server\resx\ColorPicker_NS.css" />
+    <Content Include="RTESource\richtexteditor\server\resx\dialog.css" />
+    <Content Include="RTESource\richtexteditor\server\resx\Dialog_ColorPicker.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\Dialog_ColorPicker_IE.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\Dialog_ColorPicker_NS.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\insertchars.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\keyboard-data.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\keyboard-diacritic.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\keyboard-dialogue.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\keyboard-multihexa.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushCpp.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushCSharp.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushCss.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushDelphi.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushJava.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushJScript.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushPhp.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushPython.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushRuby.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushSql.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushVb.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shBrushXml.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\shCore.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\sh_Core.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\spell.css" />
+    <Content Include="RTESource\richtexteditor\server\resx\spell.js" />
+    <Content Include="RTESource\richtexteditor\server\resx\virtualkeyboard.js" />
+    <Content Include="RTESource\richtexteditor\server\SpellCheck.aspx" />
+    <Content Include="RTESource\richtexteditor\server\spellcheck.xml" />
+    <Content Include="RTESource\richtexteditor\server\syntaxhighlighter.htm" />
+    <Content Include="RTESource\richtexteditor\server\syntaxhighlighter.xml" />
+    <Content Include="RTESource\richtexteditor\server\virtualkeyboard.htm" />
+    <Content Include="RTESource\richtexteditor\server\virtualkeyboard.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2003\skin.css" />
+    <Content Include="RTESource\richtexteditor\skins\office2003\skin.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2003\toolbar_custom.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2003\toolbar_template.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2007\skin.css" />
+    <Content Include="RTESource\richtexteditor\skins\office2007\skin.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2007\toolbar_custom.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2007\toolbar_template.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2010\skin.css" />
+    <Content Include="RTESource\richtexteditor\skins\office2010\skin.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2010\toolbar_custom.xml" />
+    <Content Include="RTESource\richtexteditor\skins\office2010\toolbar_template.xml" />
+    <Content Include="RTESource\richtexteditor\skins\officexp\skin.css" />
+    <Content Include="RTESource\richtexteditor\skins\officexp\skin.xml" />
+    <Content Include="RTESource\richtexteditor\skins\officexp\toolbar_custom.xml" />
+    <Content Include="RTESource\richtexteditor\skins\officexp\toolbar_template.xml" />
+    <Content Include="RTESource\richtexteditor\skins\phone\skin.css" />
+    <Content Include="RTESource\richtexteditor\skins\phone\skin.xml" />
+    <Content Include="RTESource\richtexteditor\skins\phone\toolbar_phone.xml" />
+    <Content Include="RTESource\richtexteditor\skins\phone\_layout.xml" />
+    <Content Include="RTESource\richtexteditor\skins\smart\skin.css" />
+    <Content Include="RTESource\richtexteditor\skins\smart\skin.xml" />
+    <Content Include="RTESource\richtexteditor\skins\smart\toolbar_custom.xml" />
+    <Content Include="RTESource\richtexteditor\skins\smart\toolbar_template.xml" />
+    <Content Include="RTESource\richtexteditor\skins\_shared\_layout.xml" />
+    <Content Include="RTESource\richtexteditor\skins\_shared\_toolbartemplate.xml" />
+    <Content Include="RTESource\richtexteditor\styles\images\formbn.gif" />
+    <Content Include="RTESource\richtexteditor\styles\images\horizontal.start.gif" />
+    <Content Include="RTESource\richtexteditor\styles\images\menuleft.gif" />
+    <Content Include="RTESource\richtexteditor\styles\images\pagebreak.gif" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbimage_clicked.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbimage_hovered.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbimage_silver2003_clicked.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbimage_silver2003_hovered.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rblabel_blue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbribbon_black.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbribbon_blue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbribbon_silver.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbribbon_silver2.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbribbon_silver2003.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\rbribbon_silver2010.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\separator.gif" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbcontrol_checked.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbcontrol_clicked.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbcontrol_hovered.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbcontrol_silver2_checked.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbcontrol_silver2_clicked.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbcontrol_silver2_hovered.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_blue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_blue2010.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_darkblue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_silver.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_silver2.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_silver20032.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbgroup_silver2007.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_black.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_blue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_lightblue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_lightsilver.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_silver2.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_silver2003.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_silver2007.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbribbon_silver2010.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbtoolbar_blue.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbtoolbar_silver.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbtoolbar_silver2.png" />
+    <Content Include="RTESource\richtexteditor\styles\images\tbtoolbar_silver20032.png" />
+    <Content Include="RTESource\richtexteditor\styles\richtexteditor.css" />
+    <Content Include="RTESource\richtexteditor\styles\tabcode.css" />
+    <Content Include="RTESource\richtexteditor\styles\tabedit.css" />
+    <Content Include="RTESource\richtexteditor\styles\tabview.css" />
+    <Content Include="Scripts\bookmark.js" />
+    <Content Include="Scripts\dom.js" />
+    <Content Include="Scripts\ice-master.min.js" />
+    <Content Include="Scripts\ice.js" />
+    <Content Include="Scripts\icePlugin.js" />
+    <Content Include="Scripts\icePluginManager.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-te-1.4.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\langs\en.js" />
+    <Content Include="Scripts\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Scripts\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\example\dialog.htm" />
+    <Content Include="Scripts\plugins\example\editor_plugin.js" />
+    <Content Include="Scripts\plugins\example\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\example\img\example.gif" />
+    <Content Include="Scripts\plugins\example\js\dialog.js" />
+    <Content Include="Scripts\plugins\example\langs\en.js" />
+    <Content Include="Scripts\plugins\example\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Scripts\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Scripts\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Scripts\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullpage\fullpage.htm" />
+    <Content Include="Scripts\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Scripts\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Scripts\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Scripts\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Scripts\plugins\IceAddTitlePlugin\IceAddTitlePlugin.js" />
+    <Content Include="Scripts\plugins\IceCopyPastePlugin\IceCopyPastePlugin.js" />
+    <Content Include="Scripts\plugins\IceEmdashPlugin\IceEmdashPlugin.js" />
+    <Content Include="Scripts\plugins\icesearchreplace\css\searchreplace.css" />
+    <Content Include="Scripts\plugins\icesearchreplace\editor_plugin.js" />
+    <Content Include="Scripts\plugins\icesearchreplace\js\searchreplace.js" />
+    <Content Include="Scripts\plugins\icesearchreplace\langs\en_dlg.js" />
+    <Content Include="Scripts\plugins\icesearchreplace\searchreplace.htm" />
+    <Content Include="Scripts\plugins\IceSmartQuotesPlugin\IceSmartQuotesPlugin.js" />
+    <Content Include="Scripts\plugins\ice\css\ice.css" />
+    <Content Include="Scripts\plugins\ice\editor_plugin.js" />
+    <Content Include="Scripts\plugins\ice\img\accept.gif" />
+    <Content Include="Scripts\plugins\ice\img\ice-accept-change.png" />
+    <Content Include="Scripts\plugins\ice\img\ice-accept.png" />
+    <Content Include="Scripts\plugins\ice\img\ice-reject-change.png" />
+    <Content Include="Scripts\plugins\ice\img\ice-reject.png" />
+    <Content Include="Scripts\plugins\ice\img\ice-showchanges.png" />
+    <Content Include="Scripts\plugins\ice\img\ice-togglechanges.png" />
+    <Content Include="Scripts\plugins\ice\img\reject.gif" />
+    <Content Include="Scripts\plugins\ice\js\ice.min.js" />
+    <Content Include="Scripts\polyfills.js" />
+    <Content Include="Scripts\rangy-core.js" />
+    <Content Include="Scripts\selection.js" />
+    <Content Include="Scripts\skins\lightgray\content.inline.min.css" />
+    <Content Include="Scripts\skins\lightgray\content.min.css" />
+    <Content Include="Scripts\skins\lightgray\img\anchor.gif" />
+    <Content Include="Scripts\skins\lightgray\img\loader.gif" />
+    <Content Include="Scripts\skins\lightgray\img\object.gif" />
+    <Content Include="Scripts\skins\lightgray\img\trans.gif" />
+    <Content Include="Scripts\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Scripts\skins\lightgray\skin.min.css" />
+    <Content Include="Scripts\themes\advanced\about.htm" />
+    <Content Include="Scripts\themes\advanced\anchor.htm" />
+    <Content Include="Scripts\themes\advanced\charmap.htm" />
+    <Content Include="Scripts\themes\advanced\color_picker.htm" />
+    <Content Include="Scripts\themes\advanced\editor_template.js" />
+    <Content Include="Scripts\themes\advanced\editor_template_src.js" />
+    <Content Include="Scripts\themes\advanced\image.htm" />
+    <Content Include="Scripts\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Scripts\themes\advanced\img\flash.gif" />
+    <Content Include="Scripts\themes\advanced\img\icons.gif" />
+    <Content Include="Scripts\themes\advanced\img\iframe.gif" />
+    <Content Include="Scripts\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Scripts\themes\advanced\img\quicktime.gif" />
+    <Content Include="Scripts\themes\advanced\img\realmedia.gif" />
+    <Content Include="Scripts\themes\advanced\img\shockwave.gif" />
+    <Content Include="Scripts\themes\advanced\img\trans.gif" />
+    <Content Include="Scripts\themes\advanced\img\video.gif" />
+    <Content Include="Scripts\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Scripts\themes\advanced\js\about.js" />
+    <Content Include="Scripts\themes\advanced\js\anchor.js" />
+    <Content Include="Scripts\themes\advanced\js\charmap.js" />
+    <Content Include="Scripts\themes\advanced\js\color_picker.js" />
+    <Content Include="Scripts\themes\advanced\js\image.js" />
+    <Content Include="Scripts\themes\advanced\js\link.js" />
+    <Content Include="Scripts\themes\advanced\js\source_editor.js" />
+    <Content Include="Scripts\themes\advanced\langs\en.js" />
+    <Content Include="Scripts\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Scripts\themes\advanced\link.htm" />
+    <Content Include="Scripts\themes\advanced\shortcuts.htm" />
+    <Content Include="Scripts\themes\advanced\skins\default\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Scripts\themes\advanced\skins\default\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Scripts\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Scripts\themes\advanced\source_editor.htm" />
+    <Content Include="Scripts\themes\modern\theme.min.js" />
+    <Content Include="Scripts\themes\simple\editor_template.js" />
+    <Content Include="Scripts\themes\simple\editor_template_src.js" />
+    <Content Include="Scripts\themes\simple\img\icons.gif" />
+    <Content Include="Scripts\themes\simple\langs\en.js" />
+    <Content Include="Scripts\themes\simple\skins\default\content.css" />
+    <Content Include="Scripts\themes\simple\skins\default\ui.css" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Scripts\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Scripts\tinymce.min.js" />
+    <Content Include="Scripts\tiny_mce.js" />
+    <Content Include="Views\index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="RTESource\richtexteditor\dialogs\skins\gray\" />
+    <Folder Include="uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\StandAlone.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\WithTE.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\WithTinyMCE.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\skins\lightgray\fonts\readme.md" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce-small.dev.svg" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce.dev.svg" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Scripts\skins\lightgray\fonts\tinymce.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\ProvidedDemo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\WithRTE.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="External\de-DE.dic" />
+    <Content Include="External\en-AU.dic" />
+    <Content Include="External\en-CA.dic" />
+    <Content Include="External\en-GB.dic" />
+    <Content Include="External\en-UK.dic" />
+    <Content Include="External\en-US.dic" />
+    <Content Include="External\es-ES.dic" />
+    <Content Include="External\es-MX.dic" />
+    <Content Include="External\it-IT.dic" />
+    <Content Include="External\richtexteditor.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\it-IT.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\de-DE.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\en-AU.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\en-CA.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\en-GB.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\en-UK.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\en-US.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\es-ES.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\es-MX.dic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\richtexteditor.lic" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RTESource\richtexteditor\config\admin.config" />
+    <Content Include="RTESource\richtexteditor\config\default.config" />
+    <Content Include="RTESource\richtexteditor\config\guest.config" />
+    <None Include="RTESource\richtexteditor\core\jsml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="RTESource\richtexteditor\core\jsml.xsx">
+      <DependentUpon>jsml.xsd</DependentUpon>
+    </Content>
+    <Content Include="RTESource\richtexteditor\rtepaint5\font\AnandaNeptouch.ttf" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\font\AnandaNeptouch.woff" />
+    <Content Include="RTESource\richtexteditor\rtepaint5\font\WorldWideWeb.woff" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\RTE\Index.cshtml" />
+    <Content Include="Views\RTE\Multiple.cshtml" />
+    <Content Include="Views\RTE\DevEx.cshtml" />
+    <Content Include="Views\RTE\HtmlEditorPartial.cshtml" />
+    <Content Include="Views\RTE\HtmlEditorPartialMulti.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{d8682535-a138-42eb-b553-63dbbeb8b42d}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51417/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

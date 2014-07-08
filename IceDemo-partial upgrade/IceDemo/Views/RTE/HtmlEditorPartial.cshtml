@@ -1,0 +1,40 @@
+﻿@using DevExpress.Web.Mvc.UI
+@using DevExpress.Web.ASPxHtmlEditor
+@Html.DevExpress().HtmlEditor(
+    settings =>
+    {
+        settings.Name = "myHtmlEditor";
+        settings.CallbackRouteValues = new { Controller = "RTE", Action = "HtmlEditorPartial" };
+        settings.SettingsImageUpload.UploadCallbackRouteValues = new { Controller = "RTE", Action = "ImageUpload" };
+        settings.SettingsImageUpload.UploadImageFolder = "~/Uploads/";
+        settings.SettingsImageUpload.ValidationSettings.Assign(IceDemo.Controllers.HtmlEditorDemosHelper.ImageUploadValidationSettings);
+        settings.Html = @ViewBag.html;
+        settings.Settings.AllowHtmlView = false;
+        settings.Settings.AllowPreview = false;
+        settings.EnableTheming = true;
+        
+        settings.Width = new System.Web.UI.WebControls.Unit(650);
+        settings.Height= new System.Web.UI.WebControls.Unit(300);
+        
+        
+        settings.Theme = "Office2010Silver";
+        settings.CssFiles.Add("~/Contents/ice.css");
+        settings.ClientSideEvents.Init = "function(s, e) { fninit(s,e); }";
+        
+        settings.Toolbars.CreateDefaultToolbars();
+        settings.Toolbars[0].Items.RemoveAll(x=> true);
+        settings.Toolbars[1].Items.RemoveAll(x => 
+            x.GetType()==typeof(ToolbarBackColorButton)
+            || x.GetType()==typeof(ToolbarParagraphFormattingEdit)
+            || x.GetType() == typeof(ToolbarStrikethroughButton)
+            );
+        settings.Toolbars[1].Items.AddRange(new HtmlEditorToolbarItem[]{
+           new  ToolbarInsertOrderedListButton(),
+           new ToolbarInsertUnorderedListButton(),
+           new ToolbarIndentButton(),
+           new ToolbarOutdentButton(),
+           new ToolbarInsertLinkDialogButton(),
+           new ToolbarUnlinkButton(),
+           new ToolbarInsertImageDialogButton()
+        });
+    }).GetHtml()

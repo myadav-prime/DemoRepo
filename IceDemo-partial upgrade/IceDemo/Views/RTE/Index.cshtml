@@ -1,0 +1,224 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RTE Demo with Track Changes</title>
+    @*<link rel="stylesheet" href="~/Contents/ice.css" type="text/css" media="screen" />*@
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    
+        <script src="~/Scripts/ice-master.min.js"></script>
+   
+    <script type="text/javascript">
+        var rteEditor, rteRoot, tracker;
+        function RichTextEditor_OnLoad(rteeditor) {
+            debugger;
+            rteEditor = rteeditor;
+            /*var fid = $('#formList').val();
+            if (fid > 0) {
+                setTimeout(function () {
+                    rteRoot = $(rteEditor.GetWindow().document).find('div[contenteditable=true]')[0]
+                    if (!!rteRoot) {
+                        tracker = new ice.InlineChangeEditor({
+                            element: rteRoot,
+                            handleEvents: true,
+                            currentUser: { id: 1, name: 'Admin SupraMed' },
+                            plugins: ['IceAddTitlePlugin', 'IceSmartQuotesPlugin', 'IceEmdashPlugin', {
+                                name: 'IceCopyPastePlugin',
+                                settings: {
+                                    pasteType: 'formattedClean',
+                                    preserve: 'p,a[href],i,em,b,span,ul,ol,li,hr'
+                                }
+                            }
+                            ]
+                        }).startTracking();
+                        setTimeout(function () {
+                            var trackElements = $('span.ins, span.del', rteRoot);
+                            $.each(trackElements, function (i, o) {
+                                var node = $(o);
+                                var action = node.hasClass('ins') ? 'Inserted' : 'Deleted';
+                                var t = action + ' by ' + node.data('username') + ' - ' + ice.dom.date('m/d/Y h:ia', parseInt(node.data('time')));
+                                node.attr('title', t);
+                            });
+
+                        }, 500);
+                    } else {
+                        alert('Tracker not loaded');
+                    }
+                }, 500);
+            }*/
+        }
+        $(document).ready(function (e) {
+            $('#drpChange').change(function (a, b) {
+                if (!tracker) return;
+                var sel = $(this).find(':selected');
+                tracker.setCurrentUser({ id: sel.data('id'), name: sel.text() });
+            });
+            $('#btnShowHide').click(function (e) {
+                if ($(rteRoot).hasClass('CT-hide')) {
+                    $(rteRoot).removeClass('CT-hide');
+                    updateCTS(false);
+                } else {
+                    $(rteRoot).addClass('CT-hide');
+                    updateCTS(true);
+                }
+            });
+
+            $('#btnLoad').click(function (e) {
+                var formid = $('#formList').val();
+                var clean = $('#chkLoadClean').is(':checked');
+                window.location = '?formid=' + formid + '&clean=' + clean;
+            });
+            function updateCTS(hide) {
+                var a = hide ? '-hide' : '';
+                var r = hide ? '' : '-hide';
+                for (var i = 1; i < 8; i++) {
+                    $('.cts-' + i + r, rteRoot).addClass('cts-' + i + a).removeClass('cts-' + i + r)
+                }
+            }
+
+            $('#btnSave').click(function (e) {
+                var fid = parseInt($('#formList').val());
+                var h = rteEditor.GetText();
+                var ch =(fid>0?tracker.getCleanContent():h);
+                
+                //var formname=$('#formList option[selected=selected]').text();
+                var fname = $('#txtFormName').val();
+                if (fid<= 0 && fname == '') {
+                    alert('Please enter form name');
+                    $('#txtFormName').focus();
+                    return;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: "RTE/SaveHTML",
+                    data: { html: h, cleanhtml: ch, formid: fid, formname: fname },
+                    success: function (res) {
+                        if (res.success) {
+                            alert('Saved');
+                            window.location = '?formid=' + res.formid;
+                        }
+                    },
+                    dataType: 'json'
+                });
+            });
+            $('#btnInsertValue').click(function (e) {
+                //rteEditor.InsertText("<insert value>", true);
+                rteEditor.InsertHTML("<span style='color:#6AAD9D;'>&lt;insert value&gt;</span>", true);
+            });
+            $('#btnInsertField').click(function (e) {
+                debugger;
+                var fld = $('#lstFields').val();
+                if (!fld) {
+                    alert('Please select a field');
+                    return;
+                }
+                rteEditor.InsertHTML("<span style='color:#B47070;'>&lt;"+fld+"&gt;</span>", true);
+            });
+        });
+    </script>
+
+</head>
+<body style="background-color:#f5f5fd;">
+    <div>
+        <table>
+            <tr>
+                <td colspan="3">
+
+                    <h2>MVC RTE Demo with Track Change</h2>
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:top; width:150px;">
+                    <p><input type="button" value="Show/Hide Changes" id="btnShowHide" style="width:142px;" /></p>
+                    <p>
+                        Current User:<br />
+                        <select id="drpChange" style="width: 142px;">
+                            <option data-id="1">Admin SupraMed</option>
+                            <option data-id="2">Kumar Kotha</option>
+                            <option data-id="3">Hanmanth Kota</option>
+                            <option data-id="4">Tulasi Mahi</option>
+                            <option data-id="5">Hemasrinu Gadela</option>
+                            <option data-id="6">Ramaraju Buddharaju</option>
+                            <option data-id="7">Vinay M</option>
+                            <option data-id="8">Prasinjit Sadhu</option>
+                            <option data-id="9">Hema Srinu</option>
+                            <option data-id="10">Krishna Arjuna</option>
+                            <option data-id="11">Santhosh Koyalkar</option>
+                            <option data-id="12">Kamesh Jalla</option>
+                            <option data-id="13">Satish User</option>
+                            <option data-id="14">Satish  Admin</option>
+                            <option data-id="15">Kareem Khan</option>
+                            <option data-id="16">Hanmanth K</option>
+                            <option data-id="17">Tulasi M</option>
+                            <option data-id="18">Deepthi Ramaraju</option>
+                            <option data-id="19">Tejo J</option>
+                            <option data-id="20">Ttt Kkk</option>
+                            <option data-id="21">Swamy S</option>
+                            <option data-id="22">Srilatha Bandi</option>
+                            <option data-id="23">Pranay P</option>
+                            <option data-id="24">Santhosh K</option>
+                            <option data-id="25">Srividya K</option>
+                            <option data-id="26">Mukesh Yadav</option>
+                        </select>
+                    </p>
+                    <p>
+                        Templates:<br />
+                        @Html.DropDownList("formList", (List<SelectListItem>)ViewBag.list, new { @style = "width: 142px;" })
+                        <input type="checkbox" id="chkLoadClean" @(ViewBag.clean?"checked":"")/><label for="chkLoadClean">Load Clean</label>
+                        <input type="button" value="Load" id="btnLoad" />
+                    </p>
+                    <p>
+                        Form:<br />
+                        <input type="text" id="txtFormName" style="width:142px" /><br />
+                        <input type="button" value="Save" id="btnSave" />
+                    </p>
+                </td>
+                <td style="padding-left:30px;vertical-align:top;width:700px;">
+                    <p>
+                        <div id="editor">
+                            @Html.Raw(ViewBag.Editor)
+                        </div>
+                    </p>
+                      <p>
+                    <div id="editor2">
+                        @Html.Raw(ViewBag.Editor2)
+                    </div>
+                        </p>
+                </td>
+                <td style="vertical-align:top;padding-left:20px;">
+                    <p><input type="button" id="btnInsertValue" value="Insert Value" /> </p>
+                    <p>Fields:<br />
+                        <select id="lstFields" size="5">
+                            <option value="patientname">Patient Name</option>
+                            <option value="dob">Patient DOB</option>
+                            <option value="patient_account_no">Patient Account #</option>
+                            <option value="provider">Provider</option>
+                            <option value="procedure">Procedure</option>
+                        </select><br />
+                        <input type="button" id="btnInsertField" value="Insert Field" /> </p>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div id="mynotes" style="display:;">
+        <small>
+        <b>Notes:</b>
+        <ol>
+            <li>SqlExpress does not supports <i>BLOB</i>, I am using <i>varchar(Max)</i> for this demo</li>
+            <li>Formatting could not be tracked</li>
+            <li>Clicking on insert and place cursor is tedious, whereas insert at current position is more feasible and api supported.(as in demo)</li>
+            <li>Each and every button is configurable, currently configured button as shown in requirement doc with addtion of common buttons</li>
+            <li>For image upload, one folder needs to be configured. All the images will be uploaded and retrived from this folder.</li>
+            <li>Insert document function only upload document on server and place a link in RTE, currently excluded</li>
+        </ol>
+            </small>
+    </div>
+</body>
+</html>

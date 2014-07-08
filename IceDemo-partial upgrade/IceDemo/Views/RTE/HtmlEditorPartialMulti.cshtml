@@ -1,0 +1,60 @@
+﻿@using DevExpress.Web.Mvc.UI
+@using DevExpress.Web.ASPxHtmlEditor
+<script type="text/javascript">
+           
+    </script>
+<div>
+        <p>
+            <div>Header:</div>
+            <div id="dvHeader" onclick="EditMe(this)" style="min-height: 30px;width: 600px; border: solid 1px gray; padding: 5px;" ></div>
+            <small><i>Click above to edit header</i></small>
+        </p>
+        <p>
+            <div>Template:</div>
+            <div id="dvTemplate" onclick="EditMe(this)" style="min-height: 30px;width: 600px; border: solid 1px gray; padding: 5px;"></div>
+            <small><i>Click above to edit template</i></small>
+        </p>
+
+        <div id="div_editor" style="display: ; position: absolute; background: white; left: 0px; top: 1000px; border: 1px solid gray;">
+            @Html.DevExpress().HtmlEditor(
+    settings =>
+    {
+        settings.Name = "myHtmlEditor";
+        settings.CallbackRouteValues = new { Controller = "RTE", Action = "HtmlEditorPartialMulti" };
+        settings.SettingsImageUpload.UploadCallbackRouteValues = new { Controller = "RTE", Action = "ImageUpload" };
+        settings.SettingsImageUpload.UploadImageFolder = "~/Uploads/";
+        settings.SettingsImageUpload.ValidationSettings.Assign(IceDemo.Controllers.HtmlEditorDemosHelper.ImageUploadValidationSettings);
+        settings.Html = @ViewBag.html;
+        settings.Settings.AllowHtmlView = false;
+        settings.Settings.AllowPreview = false;
+        settings.EnableTheming = true;
+        
+        settings.Width = new System.Web.UI.WebControls.Unit(650);
+        settings.Height= new System.Web.UI.WebControls.Unit(300);
+        
+        settings.Theme = "Office2010Silver";
+        settings.CssFiles.Add("~/Contents/ice.css");
+        settings.ClientSideEvents.Init = "function(s, e) { fninit(s,e); }";
+        
+        settings.Toolbars.CreateDefaultToolbars();
+        settings.Toolbars[0].Items.RemoveAll(x=> true);
+        settings.Toolbars[1].Items.RemoveAll(x => 
+            x.GetType()==typeof(ToolbarBackColorButton)
+            || x.GetType()==typeof(ToolbarParagraphFormattingEdit)
+            || x.GetType() == typeof(ToolbarStrikethroughButton)
+            );
+        settings.Toolbars[1].Items.AddRange(new HtmlEditorToolbarItem[]{
+           new  ToolbarInsertOrderedListButton(),
+           new ToolbarInsertUnorderedListButton(),
+           new ToolbarIndentButton(),
+           new ToolbarOutdentButton(),
+           new ToolbarInsertLinkDialogButton(),
+           new ToolbarUnlinkButton(),
+           new ToolbarInsertImageDialogButton()
+        });
+    }).GetHtml()
+            <button type="button" onclick="GetEditorHTML();">
+                OK</button>
+        </div>
+        
+    </div>
